@@ -8,3 +8,74 @@
  Tags:         recruitment
  Text Domain:  fpwd
 */
+
+.page--contact__content {
+    text-align: justify;
+}
+
+.page--contact__info {
+    display: flex;
+    margin-top: 40px;
+    position: relative;
+    width: 100%;
+}
+
+.page--contact__description {
+    padding: 20px 0;
+}
+
+.page--contact__description,
+.page--contact__googlemap {
+    width: 50%;
+}
+
+.page--contact__description ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.page--contact__logo {
+    padding-bottom: 20px;
+}
+
+.page--contact__address p {
+    margin-bottom: 0;
+}
+
+.acf-map {
+    border: 1px solid #ccc;
+    min-height: 300px;
+    width: 100%;
+}
+
+.acf-map img {
+    max-width: inherit !important;
+}
+
+.acf-map .address {margin: 0;}
+
+@media screen and (max-width: 767px) {
+    .page--contact__info {display: block;}
+    .page--contact__info div {
+        display: block;
+        width: 100%;
+    }
+
+    .page--contact__logo,
+    .page--contact__address {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .page--contact__logo {margin-right: 20px;}
+}
+
+@media screen and (max-width: 424px) {
+    .page--contact__logo,
+    .page--contact__address {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+}
