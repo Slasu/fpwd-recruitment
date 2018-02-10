@@ -25,3 +25,19 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 include_once(dirname(__FILE__) . '/inc/acf-contact.php');
+
+include_once( dirname( __FILE__ ) . '/inc/post_type_employee.php');
+
+function remove_sidebar_bodyclass_from_employees( $classes ) {
+    if ( is_singular('employee') ) {
+        $classes = array_diff($classes, ["has-sidebar"]);
+    }
+
+    return $classes;
+}
+add_filter( 'body_class', 'remove_sidebar_bodyclass_from_employees', 999);
+
+function remove_more_link_from_excerpt() {
+    return '...';
+}
+add_filter('excerpt_more', 'remove_more_link_from_excerpt', 99);
