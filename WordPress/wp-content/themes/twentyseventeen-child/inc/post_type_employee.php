@@ -76,6 +76,7 @@ if(function_exists('register_field_group')) {
                 'save_format' => 'id',
                 'library' => 'all',
                 'instructions' => __('Select employee image', 'fpwd'),
+                'required' => true
             ),
             array(
                 'key' => 'field_employee_name',
@@ -85,6 +86,7 @@ if(function_exists('register_field_group')) {
                 'placeholder' => __('Employee name', 'fpwd'),
                 'formatting' => 'html',
                 'instructions' => __('Enter employee name', 'fpwd'),
+                'required' => true
             ),
             array(
                 'key' => 'field_employee_email',
@@ -93,6 +95,7 @@ if(function_exists('register_field_group')) {
                 'type' => 'email',
                 'placeholder' => __('Employee email', 'fpwd'),
                 'instructions' => __('Enter employee email', 'fpwd'),
+                'required' => true
             ),
             array(
                 'key' => 'field_employee_www',
@@ -102,6 +105,7 @@ if(function_exists('register_field_group')) {
                 'placeholder' => __('Employee www', 'fpwd'),
                 'formatting' => 'html',
                 'instructions' => __('Enter employee www address', 'fpwd'),
+                'required' => true
             ),
             /*
              * Fields for social links need to be refactored. Unfortunatelly, group fields/repeater is only available in
