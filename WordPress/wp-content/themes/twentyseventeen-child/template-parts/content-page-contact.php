@@ -27,4 +27,5 @@ $contact_map = get_post_meta($post->ID, 'contact_map', true);
             <?php } ?>
         </div>
     </div>
+    <div id="contact--employees__holder"></div>
 </article>

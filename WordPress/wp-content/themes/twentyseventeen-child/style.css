@@ -80,6 +80,47 @@
     }
 }
 
+#contact--employees__holder {
+    display: block;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.employee--list__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.employee--list__item {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 33%;
+}
+
+.employee--list__item img {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.employee--list__item span {
+    display: block;
+}
+
+@media screen and (max-width: 767px) {
+    .employee--list__item {
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .employee--list__item {
+        width: 100%;
+    }
+}
+
 /* Employee single post */
 .single--employee__description {margin-top: 40px;}
 
