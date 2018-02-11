@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'DINOT';
+  src: url('./dinot-font/DINOT-Regular.ttf') format('truetype'),
+       url('./dinot-font/DINOT-Regular.eot') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'DINOT-Bold';
+  src: url('./dinot-font/DINOT-Bold.ttf') format('truetype'),
+       url('./dinot-font/DINOT-Bold.eot') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'DINOT-Black';
+  src: url('./dinot-font/DINOT-Black.ttf') format('truetype'),
+       url('./dinot-font/DINOT-Black.eot') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'DINOT-Medium';
+  src: url('./dinot-font/DINOT-Medium.ttf') format('truetype'),
+       url('./dinot-font/DINOT-Medium.eot') format('embedded-opentype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  max-width: 1170px;
+  position: relative;
+  width: 100%;
+}
+
+.dinot-bold {
+  font-family: 'DINOT-Bold';
+}
+
+.red {
+  color: $color-first-line;
+}
