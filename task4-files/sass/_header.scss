@@ -5,6 +5,14 @@
   background-position-y: 100%;
   padding-top: 150px;
 
+  @media screen and (max-width: $grid-tablet) {
+    padding-top: 50px;
+  }
+
+  @media screen and (max-width: $grid-phone) {
+    padding-top: 30px;
+  }
+
   .header--description {
     padding-top: 60px;
     background: #ccc;
@@ -23,6 +31,10 @@
     font-weight: 600;
     margin-bottom: 30px;
     margin-top: 0;
+
+    @media screen and (max-width: $grid-phone) {
+      line-height: 35px;
+    }
   }
 
   h2 {
