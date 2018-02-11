@@ -117,7 +117,6 @@ function SlideLeft() {
         */
         var sliderWidth = jQuery("#Slider").width();
         sliderPosition = jQuery(jQuery('.slider--single__slide')).length -1;
-        console.log(sliderPosition);
         slider.css('right', setRightOffset(slider.width() - sliderWidth, pxToSlide));
     }
 
@@ -146,7 +145,6 @@ function sliderSetPage(page, slide) {
 }
 
 function sliderAutoplay(time) {
-    console.log('fire');
     sliderInterval = null;
 
     sliderAutoplay = function() {
