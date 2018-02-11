@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+.container {
+    margin: 100px auto;
+    max-width: 1200px;
+    padding: 0 15px;
+    position: relative;
+    width: 100%;
+}
+
+#Slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider--container {
+    position: relative;
+    width: 100%;
+    transition: right 0.5s;
+}
+
+.slider--single__slide {
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding:0 5px;
+}
+
+.slider--single__slide img {
+    max-width: 100%;
+}
+
+.button--slide__left,
+.button--slide__right {
+    background: #ccc;
+    border: 1px solid #777;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 50px;
+    height: 40px;
+    line-height:30px;
+    outline: none;
+    position: absolute;
+    top: calc(50% - 25px);
+    width: 40px;
+    z-index: 9;
+}
+
+.button--slide__left {
+    left: -30px;
+}
+
+.button--slide__right {
+    right: -30px;
+}
+
+.slider--pagination {
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.slider--pagination button {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 10px;
+    outline: none;
+    width: 25px;
+}
+
+.slider--pagination button:last-child {
+    margin: 0;
+}
+
+@media screen and (max-width: 1265px) {
+    .button--slide__left {
+        left: 0;
+    }
+
+    .button--slide__right {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .button--slide__left {
+        top: -45px;
+        left: 25px;
+    }
+
+    .button--slide__right {
+        top: -45px;
+        right: 25px;
+    }
+}
