@@ -1,0 +1,12 @@
+{
+  "name": "npm-build-boilerplate",
+  "version": "1.0.0",
+  "description": "tmp",
+  "scripts": {
+    "sass": "node-sass --watch sass/style.scss -o ./"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
