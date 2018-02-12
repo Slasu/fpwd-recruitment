@@ -7,12 +7,22 @@ var _timer = null;
     @param timeToSlide - type: int, defines time needed to change slide if autoplay is enabled (1sec = 1000)
  */
 function SliderInit(autoplay, timeToSlide) {
+    /*
+        Function sliderSetup builds slides from slider-config.js file along with next/prev slide buttons. It is implemented
+        to meet the task requirements, as this should be a standalone plugin. The drawback of this solution is that it's not
+        compatible with SEO. Slider is loaded in $(document).ready, so it won't be really visible to the robots.
+        I created template for slider in HTML file and I suggest loading slider only with it. If you want to load slides with
+        config, just uncomment line below this comment and comment/delete template from HTML (everything in #Slider div
+        and prev/next slide button). Slider's config file is loaded in HTML, I'm keeping it here just in case.
+     */
+    // if(jQuery('.slider--container').length === 0) sliderSetup();
+
     var slider = jQuery('.slider--container');
     var singleSlide = jQuery('.slider--single__slide');
     var sliderWidth = jQuery("#Slider").width();
     var windowWidth = jQuery(window).innerWidth();
     var slidesAmount = jQuery(singleSlide).length;
-    var pxToSlide = parseFloat(singleSlide.outerWidth());
+    var pxToSlide = parseInt(singleSlide.outerWidth());
     var slidesPerPage;
 
     if (windowWidth > 993) {
@@ -47,6 +57,30 @@ function SliderInit(autoplay, timeToSlide) {
     }
 }
 
+/*
+    Display slides based on slider-config.js file. Delete slider's template code from HTML file to make it work.
+ */
+function sliderSetup() {
+    var slider = jQuery('#Slider');
+    var sliderContainerClass = 'slider--container';
+    slider.append('<div class="'+sliderContainerClass+'"></div>');
+    var slide = '';
+    jQuery(slides).each(function(key, value) {
+        slide = '<div class="slider--single__slide">';
+        jQuery.each(value, function(key2, value2) {
+            if(key2 == 'image') slide += '<img src="'+value2+'" alt="Slider image" title="Slider image"/>'
+            if(key2 == 'description') slide += '<p>'+value2+'</p>';
+        });
+        slide += '</div>';
+        console.log(slide);
+        jQuery('.slider--container').append(slide);
+    });
+
+    jQuery('<button class="button--slide__left" onclick="SlideLeft()"><</button>').insertBefore(slider);
+    jQuery('<div class="slider--pagination"></div>').insertAfter(slider);
+    jQuery('<button class="button--slide__right" onclick="SlideRight()">></button>').insertAfter(slider);
+}
+
 //Sets Slider's right css value, useful especially when window is resized
 function setRightOffset(sliderWidth, pxToSlide) {
     if (sliderPosition * pxToSlide > sliderWidth) {
@@ -72,10 +106,10 @@ function setupSliderPagination(slidesAmount, slidesPerPage) {
 
 //Next slide function
 function SlideRight() {
-    var pxToSlide = parseFloat(jQuery('.slider--single__slide').outerWidth());
+    var pxToSlide = parseInt(jQuery('.slider--single__slide').outerWidth());
     var slider = jQuery('.slider--container');
     var sliderHolderWidth = slider.width() - jQuery("#Slider").width();
-    var rightPx = parseFloat(slider.css("right"));
+    var rightPx = parseInt(slider.css("right"));
 
     if (Math.abs(rightPx % pxToSlide != 0)) {
         return;
@@ -99,9 +133,9 @@ function SlideRight() {
 
 //Previous slide function
 function SlideLeft() {
-    var pxToSlide = parseFloat(jQuery('.slider--single__slide').outerWidth());
+    var pxToSlide = parseInt(jQuery('.slider--single__slide').outerWidth());
     var slider = jQuery('.slider--container');
-    var rightPx = parseFloat(slider.css("right"));
+    var rightPx = parseInt(slider.css("right"));
     if (Math.abs(rightPx % pxToSlide != 0)) {
         return;
     }
@@ -126,7 +160,7 @@ function SlideLeft() {
 
 function sliderSetPage(page, slide) {
     var slider = jQuery('.slider--container');
-    var pxToSlide = parseFloat(jQuery('.slider--single__slide').outerWidth());
+    var pxToSlide = parseInt(jQuery('.slider--single__slide').outerWidth());
     var sliderWidth = jQuery("#Slider").width();
     sliderPosition = slide;
 
